@@ -1,12 +1,77 @@
 <body>
 
-  <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHGpxDntTU/jlm7x8wLgmeN_XjHyOvbpQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
+<!-- Contenedor responsive -->
+<style>
+  .canva-embed {
+    max-width: 1200px;
+    margin: 1.6em auto 0.9em;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.16);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  /* Preferencia moderna: usar aspect-ratio */
+  .canva-embed .embed-ratio {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    /* ratio por defecto 16:9 */
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Fallback para navegadores sin aspect-ratio */
+  @supports not (aspect-ratio: 1/1) {
+    .canva-embed .embed-ratio {
+      height: 0;
+      padding-top: 56.25%; /* 16:9 */
+      position: relative;
+    }
+    .canva-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Estilos del iframe para ambos casos */
+  .canva-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* Ajustes para pantallas pequeñas: ratio más alto (más vertical) */
+  @media (max-width: 600px) {
+    .canva-embed .embed-ratio {
+      aspect-ratio: 4 / 3;
+    }
+    @supports not (aspect-ratio: 1/1) {
+      .canva-embed .embed-ratio { padding-top: 75%; } /* 4:3 */
+    }
+  }
+</style>
+
+<div class="canva-embed" role="region" aria-label="Vista previa del diseño Canva">
+  <div class="embed-ratio">
+    <iframe
+      title="Diseño Canva: Título descriptivo"
+      loading="lazy"
+      src="https://www.canva.com/design/DAHGpxDntTU/jlm7x8wLgmeN_XjHyOvbpQ/view?embed"
+      allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+      referrerpolicy="no-referrer"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+    </iframe>
+  </div>
 </div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHGpxDntTU&#x2F;jlm7x8wLgmeN_XjHyOvbpQ&#x2F;view?utm_content=DAHGpxDntTU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">listo (Sitio web)</a> de Fundación Ciudadelas de Libertad  
+
+<!-- Enlace alternativo para usuarios con problemas -->
+<noscript>
+  <p>Si no ves la vista previa, abre el diseño en Canva: <a href="https://www.canva.com/design/DAHGpxDntTU/jlm7x8wLgmeN_XjHyOvbpQ/view" target="_blank" rel="noopener noreferrer">Abrir en Canva</a></p>
+</noscript>
 
 </body>
